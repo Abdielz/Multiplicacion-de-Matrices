@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int FA,CA,FB,CB,FC,CC,Co=0,C1=0,C2=0,i,j,k;
+int FA,CA,FB,CB,Co=0,C1=0,C2=0,i,j,k;
 
 
 int main()
@@ -65,7 +65,6 @@ for (i = 0; i < FA; ++i)
         }
     }   
 }
-
     printf("\nMatriz Resultante\n");
     for (i = 0; i < FB; i++) 
     {
@@ -75,14 +74,22 @@ for (i = 0; i < FA; ++i)
         }
         printf("\n");
     }
-
+FILE *MatrizResultante;
+MatrizResultante = fopen("Matriz Resultante.txt","w");
+ for (i = 0; i < FB; i++) 
+    {
+        for (j = 0; j < CB; j++)
+        {
+        fprintf(MatrizResultante,"%d\t", C[i][j]);
+        }
+        fprintf(MatrizResultante,"\n");
+    }
+fclose(MatrizResultante);
 }
 else
 {
 printf("\nLa multiplicacion no se puede realizar");
 printf("\nverifique que las matrices sean conpatibles");
 }
-
-
 return 0;
 }
