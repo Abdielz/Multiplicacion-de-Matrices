@@ -29,7 +29,7 @@ Matriz1=fopen("Matriz1.txt","r");
             for (j = 0; j < CA; ++j)
             {
             fscanf(Matriz1,"%d", &A[i][j]);
-            printf("%d\t", &A[i][j]);
+            printf("%d\t", A[i][j]);
             Co=Co+1;
             };
         };
